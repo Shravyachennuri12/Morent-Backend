@@ -12,7 +12,13 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-app.use(cors());
+// // Allow requests from your Vercel frontend
+app.use(
+  cors({
+    origin: ["https://morent-theta.vercel.app", "http://localhost:5000"],
+    credentials: true,
+  })
+);
 
 
 // Routes
