@@ -4,8 +4,14 @@ const fs = require("fs");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+<<<<<<< HEAD
     const userId = req.user?.user_id;
 
+=======
+    // Try multiple ways to get userId
+    const userId = req.user?._id || req.body?.userId || req.params?.userId;
+    
+>>>>>>> f652a3c (new)
     if (!userId) {
       return cb(new Error("User ID is required for file uploads"), null);
     }
@@ -54,4 +60,8 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
 });
 
+<<<<<<< HEAD
 module.exports = upload;
+=======
+module.exports = upload;
+>>>>>>> f652a3c (new)
