@@ -8,13 +8,8 @@ const router = express.Router();
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 
-<<<<<<< HEAD
-router.get("/", verifyToken,getAllProfiles); // Fetch all profiles
-router.get("/:userId", verifyToken,getProfileById); // Fetch profile by ID
-=======
 router.get("/", verifyToken,getAllProfiles);
 router.get("/:userId", verifyToken,getProfileById); 
->>>>>>> f652a3c (new)
 router.post("/",verifyToken,uploads.fields([
         { name: "profilePic", maxCount: 1 },
         { name: "aadhaarFront", maxCount: 1 },
@@ -25,11 +20,7 @@ router.post("/",verifyToken,uploads.fields([
     ]),
     createProfile
 );
-<<<<<<< HEAD
-router.put("/:userId", verifyToken, uploads.fields([
-=======
 router.patch("/:userId", verifyToken, uploads.fields([
->>>>>>> f652a3c (new)
     { name: "profilePic", maxCount: 1 },
     { name: "aadhaarFront", maxCount: 1 },
     { name: "aadhaarBack", maxCount: 1 },

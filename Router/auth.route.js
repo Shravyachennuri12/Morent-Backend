@@ -14,9 +14,5 @@ router.post("/forgotpassword", forgotPassword);
 router.post("/verifyotp", verifyOTP);
 
 router.post("/resetpassword", resetPassword);
-<<<<<<< HEAD
-// router.post('/resetpassword', verifyToken, resetPassword);
-=======
->>>>>>> f652a3c (new)
 
 module.exports = router;
